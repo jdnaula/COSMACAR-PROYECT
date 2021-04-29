@@ -1,11 +1,8 @@
 
 <ion-card>
-  
 
-
-  <ion-title align="center">Ingrese Mantenimientos de ConsmaCards</ion-title>
-  <td></td>
-  <td></td>
+  <ion-title class="encabezado">Ingrese Mantenimientos de ConsmaCards</ion-title>
+ 
   <ion-item>
     <ion-label class="normal" position="floating"> Ingrese Nombre del Mantenimineto</ion-label>
     <ion-input  [(ngModel)]="newMantenimeitos.nombre" class="normal" type="text" inputmode="text"></ion-input>
@@ -30,10 +27,13 @@
   </ion-item>
 
 
-
-  <ion-button style="margin: 30px;" expand="full" color="dark"
+  <ion-button style="margin: 30px;" expand="full" color="primary"
   (click)="guardarMantenimientos()">
   
   Guardar</ion-button>
+  <ion-button style="margin: 30px;" expand="full" color="primary"
+  (click)="guardarMantenimientos()">
+  
+  Modificar</ion-button>
 
 </ion-card>
