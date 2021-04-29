@@ -1,0 +1,39 @@
+
+<ion-card>
+  
+
+
+  <ion-title align="center">Ingrese Mantenimientos de ConsmaCards</ion-title>
+  <td></td>
+  <td></td>
+  <ion-item>
+    <ion-label class="normal" position="floating"> Ingrese Nombre del Mantenimineto</ion-label>
+    <ion-input  [(ngModel)]="newMantenimeitos.nombre" class="normal" type="text" inputmode="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Ingrese el precio</ion-label>
+    <ion-input  [(ngModel)]="newMantenimeitos.precio" class="normal" type="number" inputmode="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Ingrese el tiempo estimado</ion-label>
+    <ion-input  [(ngModel)]="newMantenimeitos.tiempo" class="normal" type="text" inputmode="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="normal"> Ingrese foto </ion-label>
+    
+  <ion-button slot="end"> 
+  <ion-button>
+  <ion-icon slot="icon-only" name="images"> 
+  </ion-icon>
+  </ion-button>
+  </ion-button>
+  </ion-item>
+
+
+
+  <ion-button style="margin: 30px;" expand="full" color="dark"
+  (click)="guardarMantenimientos()">
+  
+  Guardar</ion-button>
+
+</ion-card>
