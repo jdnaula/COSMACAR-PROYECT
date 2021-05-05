@@ -6,11 +6,19 @@ import { ContactosComponent } from './paginas/contactos/contactos.component';
 import { EstadosComponent } from './paginas/estados/estados.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { ManteniminetoComponent } from './paginas/mantenimiento/mantenimineto.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
 import { ServiciosComponent } from './paginas/servicios/servicios.component';
 import { UsuarioComponent } from './paginas/usuario/usuario.component';
 import { SetManteniminetoComponent } from './set-mantenimineto/set-mantenimineto.component';
 
 const routes: Routes = [
+
+  {
+    path: 'registro',
+    component: RegistroComponent,
+  },
+
+
   {
     path: 'inicio',
     component: InicioComponent,

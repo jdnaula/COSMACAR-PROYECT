@@ -15,15 +15,24 @@
     <ion-label position="floating"> Ingrese el tiempo estimado</ion-label>
     <ion-input  [(ngModel)]="newMantenimeitos.tiempo" class="normal" type="text" inputmode="text"></ion-input>
   </ion-item>
+
+
   <ion-item>
     <ion-label class="normal"> Ingrese foto </ion-label>
     
   <ion-button slot="end"> 
   <ion-button>
-  <ion-icon slot="icon-only" name="images"> 
-  </ion-icon>
+    <label for="fileupload">
+  <ion-icon slot="icon-only" name="images"> </ion-icon>
+   </label>
+   <ion-input (change)= "newImageUpload($event)" id="fileUpload" style="display:none" > </ion-input>
+    
+
   </ion-button>
   </ion-button>
+<ion-item>
+  <img class="image" [src]= "">
+</ion-item>
   </ion-item>
 
 
@@ -31,9 +40,15 @@
   (click)="guardarMantenimientos()">
   
   Guardar</ion-button>
-  <ion-button style="margin: 30px;" expand="full" color="primary"
+
+  <!-- <ion-button style="margin: 30px;" expand="full" color="primary"
   (click)="guardarMantenimientos()">
   
-  Modificar</ion-button>
+  Modificar</ion-button> -->
+
+  <ion-button style="margin: 30px;" expand="full" color="primary"
+  (click)="eliminarMantenimiento()">
+  
+  Eliminar</ion-button>
 
 </ion-card>

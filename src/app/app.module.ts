@@ -24,6 +24,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { firebaseConfig } from '../environments/environment';
 import { SetManteniminetoComponent } from './set-mantenimineto/set-mantenimineto.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SetManteniminetoComponent } from './set-mantenimineto/set-mantenimineto
     ServiciosComponent,
     UsuarioComponent,
     FormularioComponent,
-    SetManteniminetoComponent
+    SetManteniminetoComponent,
+    RegistroComponent
+    
   ],
   entryComponents: [],
   imports: [

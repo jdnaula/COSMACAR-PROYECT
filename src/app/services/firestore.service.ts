@@ -2,14 +2,23 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 import { AngularFireAuth } from "@angular/fire/auth";
+import { promise } from 'selenium-webdriver';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
+  
+
+
 })
 export class FirestoreService {
+  
   constructor(
+    
     private AFauth: AngularFireAuth,
-    public database: AngularFirestore
+    public database: AngularFirestore,
+    public storage: AngularFireStorage
   ) {}
 
   // vamos a declarar las funciones aqui
@@ -41,7 +50,39 @@ export class FirestoreService {
     const collection = this.database.collection(path); //apuntamos a un documento
     return collection.doc(id).update(data);
   }
+
+
+
   getId() {
     return this.database.createId();
   }
+
+uploadImag(file: any, path: string, nombre: string): Promise <string> {
+
+return new Promise (resolve =>{
+
+    const filePath = path + '/'+ 'nombre';
+    const ref = this.storage.ref(filePath);
+    const task = ref.putString(file);//para subier las imagenes
+    task.snapshotChanges().pipe(
+      finalize( () => {
+         ref.getDownloadURL().subscribe( res => {
+           
+          const downloadURL = res;
+          resolve(downloadURL);
+          return;
+         });
+      })
+   )
+  .subscribe();
+
+    
+
+
+});
+
+
+}
+
+
 }
